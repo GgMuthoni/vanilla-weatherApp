@@ -25,28 +25,32 @@
                 type="search"
                 placeholder="Type city"
                 id="city_input"
-                class="form-contol w-95"
+                class="form-contol"
+                autocomplete="off"
               />
             </div>
             <div class="col-3">
-              <input type="submit" value="Search" class="btn btn-primary" />
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-primary w-60"
+              />
             </div>
           </div>
         </form>
         <h1 id="city"></h1>
         <ul>
-          <li id="date">Saturday 11:47</li>
+          <li id="date"></li>
           <li id="description"></li>
         </ul>
         <div class="row">
           <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Cloudy"
-              id="icon"
-            />
+            <img src="#" alt="Cloudy" id="icon" />
             <strong id="temperature"> </strong>
-            <span class="units" id="units">°C | °F</span>
+            <span class="units" id="units"
+              ><a href="#" id="celsius_link">°C </a>|
+              <a href="#" id="farenheit_link"> °F</a></span
+            >
           </div>
           <div class="col-6">
             <ul>
@@ -57,6 +61,11 @@
         </div>
       </div>
     </div>
+    <p>
+      <a href="https://github.com/GgMuthoni/vanilla-weatherApp.git">
+        Source code </a
+      >by Gil
+    </p>
     <script src="src/index.js"></script>
   </body>
 </html>
