@@ -24,7 +24,8 @@ function currentDate(timestamp) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
   return days[day];
 }
 function showForecast(response) {
@@ -62,7 +63,6 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(showForecast);
 }
 function showTemperature(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#date").innerHTML = currentDate(
     response.data.dt * 1000
@@ -83,6 +83,7 @@ function showTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  getForecast(response.data.coord);
 }
 
 function retrieveCity(city) {
